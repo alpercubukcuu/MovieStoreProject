@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreWebApi", "MovieStoreWebApi\MovieStoreWebApi.csproj", "{CC05EAC8-162B-487C-9530-AE87AFDEC5B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E987111B-6AF7-415F-BCE2-B30C1E9F3081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieStoreWebApi.UnitTests", "Tests\MovieStoreWebApi.UnitTests\MovieStoreWebApi.UnitTests.csproj", "{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC05EAC8-162B-487C-9530-AE87AFDEC5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC05EAC8-162B-487C-9530-AE87AFDEC5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC05EAC8-162B-487C-9530-AE87AFDEC5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC05EAC8-162B-487C-9530-AE87AFDEC5B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D458BEF-8D01-4786-A8E6-640E6FF51AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D458BEF-8D01-4786-A8E6-640E6FF51AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D458BEF-8D01-4786-A8E6-640E6FF51AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D458BEF-8D01-4786-A8E6-640E6FF51AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	{9EF6A55C-F9D0-4A0B-989B-30A82E1F7C26} = {E987111B-6AF7-415F-BCE2-B30C1E9F3081}
+	EndGlobalSection
+EndGlobal
