@@ -13,6 +13,7 @@ using MovieStoreWebApi.DBOperations;
 using MovieStoreWebApi.TokenOperations.Models;
 using MovieStoreWebApi.CustomerOperations.CreateCustomer;
 using static MovieStoreWebApi.CustomerOperations.CreateCustomer.CreateCustomerCommand;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace MovieStoreWebApi.Controllers
 {
@@ -24,11 +25,13 @@ namespace MovieStoreWebApi.Controllers
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
         readonly IConfiguration _configuration;
-        public CustomerController(IMovieStoreDbContext context, IConfiguration configuration, IMapper mapper)
+        private readonly IDataProtectionProvider _dataProtectionProvider;
+        public CustomerController(IMovieStoreDbContext context, IConfiguration configuration, IMapper mapper, IDataProtectionProvider dataProtectionProvider)
         {
             _context = context;
             _configuration = configuration;
             _mapper = mapper;
+            _dataProtectionProvider = dataProtectionProvider;
         }
 
         [HttpGet]
@@ -79,7 +82,7 @@ namespace MovieStoreWebApi.Controllers
         [HttpPost("connect/token")]
         public ActionResult<Token> CreateToken([FromBody] CreateTokenModel login)
         {
-            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper, _configuration);
+            CreateTokenCommand command = new CreateTokenCommand(_context, _mapper, _configuration, _dataProtectionProvider);
             command.Model = login;
             var token = command.Handle();
             return token;   

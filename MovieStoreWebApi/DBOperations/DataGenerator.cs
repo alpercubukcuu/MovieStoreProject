@@ -11,7 +11,7 @@ namespace MovieStoreWebApi.DBOperations
             {
 
                 context.Customers.AddRange(
-                   new Customer { FirstName = "Alper", LastName = "Cubukcu", Email = "alper@gmail.com", Password = "123456", RefreshToken = "" },
+                   new Customer { FirstName = "Alper", LastName = "Cubukcu", Email = "alper@gmail.com", Password = "CfDJ8GaCTE7B6rdBgyxrjqGbXLjgzMFoVt8ZTICNSCqsjz8HgiJLAFCXuN-iXvUApjJy-nSp5WlRVIoiNnpCf3rNBp7IAZ2DHyd4lSMVQlfiMLgaNtoIf-P--J1T-Of3dw7jCQ", RefreshToken = "" },
                    new Customer { FirstName = "Ozge", LastName = "Cubukcu", Email = "ozge@gmail.com", Password = "123456", RefreshToken = "" },
                    new Customer { FirstName = "Burak", LastName = "Cubukcu", Email = "burak@gmail.com", Password = "123456", RefreshToken = "" }
 

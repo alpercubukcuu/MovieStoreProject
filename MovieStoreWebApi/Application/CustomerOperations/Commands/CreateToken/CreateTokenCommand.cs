@@ -1,7 +1,9 @@
 using AutoMapper;
+using Microsoft.AspNetCore.DataProtection;
 using MovieStoreWebApi.DBOperations;
 using MovieStoreWebApi.TokenOperations;
 using MovieStoreWebApi.TokenOperations.Models;
+using MovieStoreWebApi.Chiper;
 
 namespace MovieStoreWebApi.CustomerOperations.CreateToken
 {
@@ -11,17 +13,23 @@ namespace MovieStoreWebApi.CustomerOperations.CreateToken
         private readonly IMovieStoreDbContext _dbcontext;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
-        public CreateTokenCommand(IMovieStoreDbContext dbContext, IMapper mapper, IConfiguration configuration)
+        private readonly IDataProtectionProvider _dataProtectionProvider;
+        public CreateTokenCommand(IMovieStoreDbContext dbContext, IMapper mapper, IConfiguration configuration, IDataProtectionProvider dataProtectionProvider)
         {
             _dbcontext = dbContext;
             _mapper = mapper;
             _configuration = configuration;
+            _dataProtectionProvider = dataProtectionProvider;
         }
 
         public Token Handle()
         {
-            var customer = _dbcontext.Customers.FirstOrDefault(x => x.Email == Model.Email && x.Password == Model.Password);
-            if (customer is not null)
+            var customer = _dbcontext.Customers.FirstOrDefault(x => x.Email == Model.Email);
+            Chipers chiper = new(_dataProtectionProvider ,customer.Email);
+           
+            var decPassword = chiper.Decrypt(customer.Password);
+
+            if (Model.Password == decPassword)
             {
                 TokenHandler handler = new TokenHandler(_configuration);
                 Token token = handler.CreateAccessToken(customer);

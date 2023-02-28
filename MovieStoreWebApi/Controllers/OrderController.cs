@@ -15,7 +15,7 @@ namespace MovieStoreWebApi.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]s")]
+    [Route("[controller]s")]    
     public class OrderController : ControllerBase
     {
         private readonly IMovieStoreDbContext _dbContext;
