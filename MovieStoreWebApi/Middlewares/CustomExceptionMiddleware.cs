@@ -16,11 +16,11 @@ namespace MovieStoreWebApi.Middlewares
         }
 
         public async Task Invoke(HttpContext context)
-        {
+        {            
             var watch = Stopwatch.StartNew();
             try
             {
-                
+                //yorum
                 string message = "[Request]  HTTP " + context.Request.Method + " - " + context.Request.Path;
                 _loggerService.Write(message);
 
